@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conectarme - Punto de Encuentro</title>
+    <!-- Use similar fonts as the main website -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Mona+Sans:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #053b4b; /* Dark navy from the image */
+        --teal: #1097ac; /* Vibrant teal from the image */
+        --light: #f7f9f9;
+        --accent: #cf3d3a; /* Small red accent like the heart */
+        --font-main: 'Mona Sans', system-ui, -apple-system, sans-serif;
+        --font-hand: 'Caveat', cursive;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--light);
+        /* Subtle texture background to mimic the paper feel */
+        background-image: radial-gradient(circle at center, #ffffff 0%, var(--light) 100%);
+        font-family: var(--font-main);
+        color: var(--navy);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 450px;
+        padding: 40px 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+      }
+
+      /* Top Logo Area */
+      .logo-container {
+        margin-bottom: 10px;
+        position: relative;
+      }
+
+      .logo-img {
+        width: 140px;
+        height: auto;
+        margin: 0 auto 10px;
+        display: block;
+      }
+
+      .logo-text {
+        font-family: var(--font-hand);
+        font-size: 2.5rem;
+        color: var(--navy);
+        margin: 0;
+        line-height: 1;
+      }
+
+      /* Header Texts */
+      .header-box {
+        margin: 25px 0 35px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .header-box::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120%;
+        height: 35px;
+        background: var(--teal);
+        z-index: -1;
+        /* Brush stroke effect */
+        border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+      }
+
+      .intro-text {
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: white;
+        margin: 0;
+        padding: 0;
+      }
+
+      .main-title {
+        font-size: 3rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 1;
+        margin: 15px 0 10px;
+        color: var(--navy);
+        letter-spacing: -1px;
+      }
+
+      .sub-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--navy);
+        margin: 0;
+        position: relative;
+        display: inline-block;
+      }
+
+      .sub-title::before,
+      .sub-title::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 40px;
+        height: 2px;
+        background: var(--teal);
+      }
+      .sub-title::before {
+        left: -50px;
+      }
+      .sub-title::after {
+        right: -50px;
+      }
+
+      .heart-icon {
+        color: var(--teal);
+        font-size: 1.5rem;
+        margin: 5px 0 25px;
+      }
+
+      /* Buttons / Links */
+      .links-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .link-btn {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        padding: 16px 20px;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: white;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        position: relative;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        /* Organic brush stroke shape */
+        border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .link-btn:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Alternating organic rotation */
+      .link-btn:nth-child(odd) {
+        transform: rotate(-1deg);
+      }
+      .link-btn:nth-child(even) {
+        transform: rotate(1deg);
+      }
+      .link-btn:nth-child(odd):hover {
+        transform: translateY(-3px) scale(1.02) rotate(-1deg);
+      }
+      .link-btn:nth-child(even):hover {
+        transform: translateY(-3px) scale(1.02) rotate(1deg);
+      }
+
+      .link-btn.navy {
+        background-color: var(--navy);
+      }
+
+      .link-btn.teal {
+        background-color: var(--teal);
+      }
+
+      .link-icon-container {
+        width: 44px;
+        height: 44px;
+        margin-right: 15px;
+        flex-shrink: 0;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .link-icon {
+        width: 24px;
+        height: 24px;
+        fill: currentColor;
+        stroke: currentColor;
+        stroke-width: 0;
+      }
+
+      .link-btn.navy .link-icon {
+        color: var(--navy);
+      }
+
+      .link-btn.teal .link-icon {
+        color: var(--teal);
+      }
+
+      .link-text {
+        flex-grow: 1;
+        text-align: left;
+        line-height: 1.1;
+        text-transform: uppercase;
+      }
+
+      /* Footer */
+      .footer-text {
+        margin-top: 40px;
+        font-family: var(--font-main);
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--navy);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* Mobile mockup container aesthetic */
+      .phone-mockup {
+        margin-top: 30px;
+        width: 100%;
+        height: 150px;
+        background-color: white;
+        border-radius: 30px;
+        border: 3px dashed var(--teal);
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo-container">
+        <img src="logo_transparent.png" alt="Punto de Encuentro Logo" class="logo-img" />
+        <h1 class="logo-text">Punto de Encuentro</h1>
+      </div>
+
+      <!-- Header -->
+      <div class="header-box">
+        <p class="intro-text">Conectate a</p>
+      </div>
+
+      <h2 class="main-title">NUESTRA<br />COMUNIDAD</h2>
+
+      <p class="sub-title">PARA RECIBIR</p>
+      <div class="heart-icon">♡</div>
+
+      <!-- Links -->
+      <div class="links-wrapper">
+        <!-- 1. Formulario -->
+        <a href="form.html" class="link-btn navy">
+          <div class="link-icon-container">
+            <svg
+              class="link-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <div class="link-text">Formulario de<br />Registración</div>
+        </a>
+
+        <!-- 2. WhatsApp -->
+        <a href="https://whatsapp.com/channel/0029VbCajW3IHphHHZP1FE1o" target="_blank" class="link-btn teal">
+          <div class="link-icon-container">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              />
+            </svg>
+          </div>
+          <div class="link-text">Canal de<br />WhatsApp</div>
+        </a>
+
+        <!-- 3. WhatsApp -->
+        <a href="https://wa.me/5491139106825" target="_blank" class="link-btn navy">
+          <div class="link-icon-container">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              />
+            </svg>
+          </div>
+          <div class="link-text">Habla con<br />Nosotros</div>
+        </a>
+
+        <!-- 4. Instagram -->
+        <a href="https://www.instagram.com/punto.de.encuentro/" target="_blank" class="link-btn teal">
+          <div class="link-icon-container">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+              />
+            </svg>
+          </div>
+          <div class="link-text">Instagram<br />Oficial</div>
+        </a>
+
+        <!-- 5. YouTube -->
+        <a href="https://www.youtube.com/@PuntoDeEncuentroOficial" target="_blank" class="link-btn navy">
+          <div class="link-icon-container">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+              />
+            </svg>
+          </div>
+          <div class="link-text">Canal de<br />YouTube</div>
+        </a>
+      </div>
+
+      <div class="footer-text">¡Sumate y sé parte!</div>
+    </div>
+  </body>
+</html>
