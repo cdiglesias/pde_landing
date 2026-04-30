@@ -33,6 +33,7 @@
       :root {
         --navy: #053b4b; /* Dark navy from the image */
         --teal: #1097ac; /* Vibrant teal from the image */
+        --light-navy: #1a647d; /* Lighter variant for the home button */
         --light: #f7f9f9;
         --accent: #cf3d3a; /* Small red accent like the heart */
         --font-main: 'Mona Sans', system-ui, -apple-system, sans-serif;
@@ -211,6 +212,10 @@
       .link-btn.teal {
         background-color: var(--teal);
       }
+      
+      .link-btn.light-navy {
+        background-color: var(--light-navy);
+      }
 
       .link-icon-container {
         width: 44px;
@@ -239,6 +244,10 @@
 
       .link-btn.teal .link-icon {
         color: var(--teal);
+      }
+      
+      .link-btn.light-navy .link-icon {
+        color: var(--light-navy);
       }
 
       .link-text {
@@ -358,6 +367,17 @@
             </svg>
           </div>
           <div class="link-text">Canal de<br />YouTube</div>
+        </a>
+
+        <!-- 6. Home -->
+        <a href="/" class="link-btn light-navy">
+          <div class="link-icon-container">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </div>
+          <div class="link-text">Ir a<br />Home</div>
         </a>
       </div>
 
