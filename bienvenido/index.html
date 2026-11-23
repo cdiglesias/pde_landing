@@ -1,0 +1,1327 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#02151f" />
+    <title>Bienvenido a casa - Punto de Encuentro</title>
+
+    <!-- Open Graph / WhatsApp -->
+    <meta
+      property="og:title"
+      content="Bienvenido a casa - Punto de Encuentro"
+    />
+    <meta
+      property="og:description"
+      content="Bienvenido a Punto de Encuentro. Conocenos, pedí oración, ofrendá, descubrí nuestras áreas, talleres y próximas actividades."
+    />
+    <meta property="og:image" content="https://pde.com.ar/icon_wide.jpg" />
+    <meta property="og:image" content="https://pde.com.ar/icon.jpg" />
+    <meta property="og:url" content="https://pde.com.ar/bienvenido" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Bienvenido a casa - Punto de Encuentro"
+    />
+    <meta
+      name="twitter:description"
+      content="Bienvenido a Punto de Encuentro. Conocenos, pedí oración, ofrendá, descubrí nuestras áreas, talleres y próximas actividades."
+    />
+    <meta name="twitter:image" content="https://pde.com.ar/icon_wide.jpg" />
+
+    <link rel="icon" type="image/png" href="/icon_max.png" />
+    <link rel="apple-touch-icon" href="/icon_max.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg-deep: #02151f;
+        --bg-mid: #042838;
+        --cyan-bright: #3be8ff;
+        --cyan-border: rgba(56, 214, 236, 0.65);
+        --text-main: #ffffff;
+        --text-soft: rgba(224, 245, 250, 0.88);
+        --font-main: "Montserrat", system-ui, -apple-system, sans-serif;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+      }
+
+      body {
+        font-family: var(--font-main);
+        color: var(--text-main);
+        background-color: var(--bg-deep);
+        background-image:
+          radial-gradient(
+            circle at 50% 34%,
+            rgba(12, 102, 124, 0.48) 0%,
+            rgba(4, 38, 52, 0.25) 42%,
+            transparent 72%
+          ),
+          linear-gradient(180deg, #031e2c 0%, #02151f 55%, #011018 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100dvh;
+        overflow-x: hidden;
+        position: relative;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Decorative luminous cyan swoosh waves matching reference */
+      .bg-waves {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .container {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 500px;
+        padding: 28px 18px 34px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 22px;
+      }
+
+      .logo {
+        width: clamp(140px, 36vw, 172px);
+        height: auto;
+        display: block;
+        margin-bottom: 10px;
+        filter: drop-shadow(0 6px 18px rgba(0, 224, 248, 0.22));
+      }
+
+      .brand-name {
+        margin: 0 0 12px;
+        font-size: clamp(1.05rem, 4vw, 1.32rem);
+        font-weight: 800;
+        line-height: 1.04;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+
+      .hero-title {
+        margin: 0;
+        font-size: clamp(2.5rem, 11.5vw, 3.55rem);
+        font-weight: 900;
+        font-style: italic;
+        line-height: 0.96;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+        text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+      }
+
+      /* 2x3 action cards grid */
+      .cards-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+      }
+
+      .action-card {
+        appearance: none;
+        font: inherit;
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 104px;
+        padding: 15px 11px;
+        gap: 5px;
+        border-radius: 20px;
+        border: 1.5px solid var(--cyan-border);
+        background: linear-gradient(
+          160deg,
+          rgba(12, 108, 128, 0.44) 0%,
+          rgba(3, 35, 48, 0.76) 100%
+        );
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow:
+          inset 0 0 22px rgba(0, 228, 255, 0.14),
+          0 8px 22px rgba(0, 0, 0, 0.35);
+        transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease,
+          background 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .action-card,
+        .web-pill,
+        .modal-option,
+        .btn-primary,
+        .btn-secondary {
+          transition-duration: 0.01ms;
+        }
+      }
+
+      .action-card:hover {
+        border-color: rgba(92, 240, 255, 0.95);
+        background: linear-gradient(
+          160deg,
+          rgba(16, 132, 156, 0.54) 0%,
+          rgba(5, 48, 66, 0.82) 100%
+        );
+        box-shadow:
+          inset 0 0 26px rgba(0, 232, 255, 0.24),
+          0 10px 26px rgba(0, 195, 225, 0.22);
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .action-card:hover {
+          transform: translateY(-2px);
+        }
+
+        .action-card:active {
+          transform: translateY(0) scale(0.985);
+        }
+      }
+
+      .action-card:focus-visible,
+      .web-pill:focus-visible,
+      .dialog-close:focus-visible,
+      .modal-option:focus-visible,
+      .btn-primary:focus-visible,
+      .btn-secondary:focus-visible {
+        outline: 2px solid #63f4ff;
+        outline-offset: 3px;
+      }
+
+      .card-title {
+        font-size: clamp(0.94rem, 3.7vw, 1.15rem);
+        font-weight: 800;
+        line-height: 1.15;
+        color: #ffffff;
+      }
+
+      .card-subtitle {
+        font-size: clamp(0.72rem, 2.7vw, 0.85rem);
+        font-weight: 400;
+        line-height: 1.25;
+        color: var(--text-soft);
+      }
+
+      /* Bottom full-website pill */
+      .web-pill {
+        margin-top: 22px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        max-width: 380px;
+        padding: 13px 20px;
+        border-radius: 999px;
+        border: 1.5px solid rgba(56, 214, 236, 0.82);
+        background: rgba(2, 26, 38, 0.72);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        color: #ffffff;
+        text-decoration: none;
+        font-size: clamp(0.84rem, 3.2vw, 0.96rem);
+        font-weight: 500;
+        box-shadow:
+          inset 0 0 14px rgba(0, 228, 255, 0.12),
+          0 6px 18px rgba(0, 0, 0, 0.35);
+        transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease,
+          background 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .web-pill:hover {
+        border-color: #6df5ff;
+        background: rgba(7, 55, 74, 0.85);
+        box-shadow:
+          inset 0 0 18px rgba(0, 232, 255, 0.22),
+          0 8px 22px rgba(0, 195, 225, 0.22);
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .web-pill:hover {
+          transform: translateY(-1px);
+        }
+      }
+
+      .web-pill svg {
+        width: 21px;
+        height: 21px;
+        flex-shrink: 0;
+      }
+
+      /* Native <dialog> modals (top-layer, light-dismiss, scroll-contained, animated) */
+      dialog {
+        margin: auto;
+        padding: 0;
+        border: 1.5px solid rgba(64, 222, 244, 0.6);
+        border-radius: 22px;
+        width: min(92vw, 440px);
+        max-height: min(88dvh, 680px);
+        color: #ffffff;
+        background: linear-gradient(165deg, #06384b 0%, #031c28 100%);
+        box-shadow:
+          inset 0 0 28px rgba(0, 224, 248, 0.12),
+          0 24px 60px rgba(0, 0, 0, 0.65);
+        opacity: 0;
+        transition-property: opacity, transform, display, overlay;
+        transition-duration: 0.26s;
+        transition-timing-function: ease-out;
+        transition-behavior: allow-discrete;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        dialog {
+          transform: scale(0.92);
+        }
+      }
+
+      dialog:modal {
+        overscroll-behavior: contain;
+      }
+
+      dialog::backdrop {
+        overflow: hidden;
+        overscroll-behavior: contain;
+        background-color: rgba(1, 12, 18, 0);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        transition-property: background-color, display, overlay;
+        transition-duration: 0.26s;
+        transition-timing-function: ease-out;
+        transition-behavior: allow-discrete;
+      }
+
+      dialog[open]:where(:not([data-closing])) {
+        opacity: 1;
+
+        @starting-style {
+          opacity: 0;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+          transform: scale(1);
+
+          @starting-style {
+            transform: scale(0.92);
+          }
+        }
+
+        &::backdrop {
+          background-color: rgba(1, 12, 18, 0.72);
+
+          @starting-style {
+            background-color: rgba(1, 12, 18, 0);
+          }
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        dialog,
+        dialog::backdrop {
+          transition-duration: 0.1s;
+        }
+      }
+
+      .dialog-surface {
+        padding: 22px 20px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .dialog-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .dialog-title {
+        margin: 0;
+        font-size: 1.32rem;
+        font-weight: 800;
+        line-height: 1.2;
+        color: #ffffff;
+        text-align: left;
+      }
+
+      .dialog-close {
+        appearance: none;
+        flex-shrink: 0;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 1px solid rgba(86, 226, 245, 0.45);
+        background: rgba(255, 255, 255, 0.06);
+        color: #ffffff;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          background 0.18s ease,
+          border-color 0.18s ease;
+      }
+
+      .dialog-close:hover {
+        background: rgba(59, 232, 255, 0.18);
+        border-color: #6df5ff;
+      }
+
+      .dialog-lead {
+        margin: 0;
+        font-size: 0.9rem;
+        line-height: 1.45;
+        color: var(--text-soft);
+        text-align: left;
+      }
+
+      /* Prayer form */
+      .prayer-form {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        text-align: left;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .field label {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: #e6fbff;
+      }
+
+      .field input,
+      .field textarea {
+        width: 100%;
+        padding: 11px 13px;
+        border-radius: 12px;
+        border: 1.5px solid rgba(64, 214, 236, 0.42);
+        background: rgba(2, 20, 29, 0.72);
+        color: #ffffff;
+        font-family: inherit;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        transition:
+          border-color 0.18s ease,
+          background-color 0.18s ease,
+          box-shadow 0.18s ease;
+      }
+
+      .field textarea {
+        resize: vertical;
+        min-height: 96px;
+      }
+
+      .field input::placeholder,
+      .field textarea::placeholder {
+        color: rgba(190, 228, 236, 0.5);
+      }
+
+      .field input:focus,
+      .field textarea:focus {
+        outline: none;
+        border-color: #54f0ff;
+        box-shadow: 0 0 0 3px rgba(59, 232, 255, 0.2);
+      }
+
+      .field :is(:user-valid, .user-valid-fallback) {
+        border-color: #36d99a;
+      }
+
+      .field :is(:user-invalid, .user-invalid-fallback) {
+        border-color: #ff6b7a;
+        background-color: rgba(110, 20, 34, 0.42);
+      }
+
+      .error-msg {
+        display: none;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #ff9ca6;
+        margin-top: 2px;
+      }
+
+      .field :is(:user-invalid, .user-invalid-fallback) + .error-msg {
+        display: block;
+      }
+
+      .dialog-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 4px;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        appearance: none;
+        font-family: inherit;
+        font-size: 0.94rem;
+        font-weight: 700;
+        border-radius: 999px;
+        padding: 12px 18px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease,
+          background 0.18s ease,
+          border-color 0.18s ease;
+      }
+
+      .btn-primary {
+        flex: 1 1 180px;
+        border: none;
+        color: #021a24;
+        background: linear-gradient(135deg, #42f0ff 0%, #10b6cc 100%);
+        box-shadow: 0 6px 18px rgba(24, 210, 234, 0.35);
+      }
+
+      .btn-primary:hover {
+        background: linear-gradient(135deg, #6ef4ff 0%, #24c8de 100%);
+      }
+
+      .btn-secondary {
+        flex: 0 1 auto;
+        border: 1px solid rgba(90, 224, 242, 0.45);
+        background: transparent;
+        color: #e4f8fc;
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      /* Areas & Workshops selector modal */
+      .modal-options {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .modal-option {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 16px;
+        border-radius: 16px;
+        border: 1.5px solid rgba(56, 214, 236, 0.6);
+        background: linear-gradient(
+          155deg,
+          rgba(12, 102, 122, 0.45) 0%,
+          rgba(3, 35, 48, 0.78) 100%
+        );
+        color: #ffffff;
+        text-decoration: none;
+        text-align: left;
+        box-shadow: inset 0 0 18px rgba(0, 224, 248, 0.12);
+        transition:
+          border-color 0.2s ease,
+          background 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .modal-option:hover {
+        border-color: #6af4ff;
+        background: linear-gradient(
+          155deg,
+          rgba(18, 128, 152, 0.58) 0%,
+          rgba(5, 48, 66, 0.86) 100%
+        );
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .modal-option:hover {
+          transform: translateY(-1px);
+        }
+      }
+
+      .modal-option-title {
+        display: block;
+        font-size: 1.05rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 3px;
+      }
+
+      .modal-option-desc {
+        display: block;
+        font-size: 0.82rem;
+        font-weight: 400;
+        color: var(--text-soft);
+        line-height: 1.3;
+      }
+
+      .modal-option svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        color: #5ceeff;
+      }
+
+      /* Hides content visually but keeps it in the accessibility tree */
+      .visually-hidden:where(:not(:focus-within, :active)) {
+        position: absolute !important;
+        clip-path: inset(50%) !important;
+        overflow: hidden !important;
+        width: 1px !important;
+        height: 1px !important;
+        margin: -1px !important;
+        padding: 0 !important;
+        border: 0 !important;
+        white-space: nowrap !important;
+      }
+    </style>
+  </head>
+  <body>
+    <svg
+      class="bg-waves"
+      viewBox="0 0 800 1200"
+      preserveAspectRatio="xMidYMid slice"
+      aria-hidden="true"
+    >
+      <defs>
+        <linearGradient id="wave-top" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#3df7ff" stop-opacity="0.95" />
+          <stop offset="45%" stop-color="#00b4d8" stop-opacity="0.45" />
+          <stop offset="100%" stop-color="#02151f" stop-opacity="0" />
+        </linearGradient>
+        <linearGradient id="wave-bottom" x1="100%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" stop-color="#3df7ff" stop-opacity="0.95" />
+          <stop offset="45%" stop-color="#00a8c8" stop-opacity="0.42" />
+          <stop offset="100%" stop-color="#02151f" stop-opacity="0" />
+        </linearGradient>
+        <radialGradient id="glow-tr" cx="92%" cy="10%" r="48%">
+          <stop offset="0%" stop-color="#0bbcd6" stop-opacity="0.34" />
+          <stop offset="100%" stop-color="#02151f" stop-opacity="0" />
+        </radialGradient>
+        <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="22" />
+        </filter>
+      </defs>
+
+      <!-- Top-right soft ambient glow -->
+      <rect width="800" height="1200" fill="url(#glow-tr)" />
+
+      <!-- Top-left luminous cyan swoosh -->
+      <path
+        d="M -60 -40 L 340 -40 C 200 120, 75 230, -60 360 Z"
+        fill="url(#wave-top)"
+        filter="url(#soft-glow)"
+      />
+      <path
+        d="M -20 280 C 120 190, 250 110, 390 -30"
+        fill="none"
+        stroke="#4ff6ff"
+        stroke-width="3"
+        stroke-opacity="0.45"
+        filter="url(#soft-glow)"
+      />
+      <path
+        d="M -20 430 C 180 280, 410 210, 840 310"
+        fill="none"
+        stroke="#0ec8e3"
+        stroke-width="45"
+        stroke-opacity="0.16"
+        filter="url(#soft-glow)"
+      />
+
+      <!-- Mid-right subtle cyan arc -->
+      <path
+        d="M 850 380 C 560 470, 520 710, 860 880"
+        fill="none"
+        stroke="#16e0fa"
+        stroke-width="32"
+        stroke-opacity="0.22"
+        filter="url(#soft-glow)"
+      />
+      <path
+        d="M 840 420 C 580 510, 550 700, 840 840"
+        fill="none"
+        stroke="#4ef5ff"
+        stroke-width="4"
+        stroke-opacity="0.45"
+      />
+
+      <!-- Bottom-right luminous cyan swoosh -->
+      <path
+        d="M 860 1240 L 360 1240 C 520 1070, 680 950, 860 820 Z"
+        fill="url(#wave-bottom)"
+        filter="url(#soft-glow)"
+      />
+      <path
+        d="M 380 1220 C 540 1070, 680 960, 850 850"
+        fill="none"
+        stroke="#6ef8ff"
+        stroke-width="5"
+        stroke-opacity="0.55"
+        filter="url(#soft-glow)"
+      />
+    </svg>
+
+    <main class="container">
+      <header class="hero">
+        <img
+          src="/bienvenido/logo-dark.png"
+          alt="Logo Punto de Encuentro"
+          width="172"
+          height="172"
+          fetchpriority="high"
+          class="logo"
+        />
+        <p class="brand-name">PUNTO DE<br />ENCUENTRO</p>
+        <h1 class="hero-title">Bienvenido<br />a casa</h1>
+      </header>
+
+      <nav class="cards-grid" aria-label="Accesos de bienvenida">
+        <!-- 1. Primera vez -->
+        <a href="/#nosotros" class="action-card">
+          <span class="card-title">¿Es tu<br />primera vez?</span>
+          <span class="card-subtitle">Queremos conocerte</span>
+        </a>
+
+        <!-- 2. Quiero ofrendar -->
+        <a href="/#contribuir" class="action-card">
+          <span class="card-title">Quiero<br />ofrendar</span>
+          <span class="card-subtitle">Ofrendas y donaciones</span>
+        </a>
+
+        <!-- 3. Pedir oración -->
+        <button
+          type="button"
+          class="action-card"
+          command="show-modal"
+          commandfor="dialog-oracion"
+        >
+          <span class="card-title">Pedir<br />oración</span>
+          <span class="card-subtitle">Queremos acompañarte</span>
+        </button>
+
+        <!-- 4. Áreas, Ministerios y Talleres -->
+        <button
+          type="button"
+          class="action-card"
+          command="show-modal"
+          commandfor="dialog-areas"
+        >
+          <span class="card-title">Áreas, Ministerios<br />y Talleres</span>
+          <span class="card-subtitle">Encontrá tu lugar</span>
+        </button>
+
+        <!-- 5. Contactarnos -->
+        <a
+          href="https://wa.me/5491139106825?text=Hola%21%20Quiero%20comunicarme%20con%20Punto%20de%20Encuentro"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="action-card"
+        >
+          <span class="card-title">Contactarnos</span>
+          <span class="card-subtitle">Estamos para ayudarte</span>
+        </a>
+
+        <!-- 6. Próximas actividades -->
+        <a href="/proximas-actividades.jpeg" class="action-card">
+          <span class="card-title">Próximas<br />actividades</span>
+          <span class="card-subtitle">Descubrí lo que viene</span>
+        </a>
+      </nav>
+
+      <a href="/" class="web-pill">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="9.5" />
+          <ellipse cx="12" cy="12" rx="4.2" ry="9.5" />
+          <path d="M2.8 12h18.4" />
+          <path d="M4.6 7.4h14.8" />
+          <path d="M4.6 16.6h14.8" />
+        </svg>
+        <span>Visitar nuestra página web completa</span>
+      </a>
+    </main>
+
+    <!-- Modal: Pedir oración -->
+    <dialog id="dialog-oracion" closedby="any" aria-labelledby="oracion-title">
+      <div class="dialog-surface">
+        <div class="dialog-header">
+          <h1 id="oracion-title" class="dialog-title">Pedir oración</h1>
+          <button
+            type="button"
+            class="dialog-close"
+            command="close"
+            commandfor="dialog-oracion"
+            aria-label="Cerrar ventana"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <p class="dialog-lead">
+          Completá tus datos y enviaremos tu pedido estructurado por WhatsApp a
+          nuestro equipo.
+        </p>
+
+        <form id="form-oracion" class="prayer-form">
+          <div class="field">
+            <label for="oracion-nombre">Nombre</label>
+            <input
+              id="oracion-nombre"
+              name="nombre"
+              type="text"
+              required
+              autocomplete="name"
+              placeholder="Tu nombre y apellido"
+              autofocus
+              data-error="error-nombre"
+            />
+            <div id="error-nombre" class="error-msg">
+              <span role="img" aria-label="Error">!</span> Por favor, ingresá tu
+              nombre.
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="oracion-celular">Celular</label>
+            <input
+              id="oracion-celular"
+              name="celular"
+              type="tel"
+              required
+              autocomplete="tel"
+              inputmode="tel"
+              placeholder="Ej: 11 1234-5678"
+              data-error="error-celular"
+            />
+            <div id="error-celular" class="error-msg">
+              <span role="img" aria-label="Error">!</span> Por favor, ingresá tu
+              número de celular.
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="oracion-motivo">Motivo de oración</label>
+            <textarea
+              id="oracion-motivo"
+              name="motivo"
+              rows="4"
+              required
+              placeholder="Contanos por qué podemos orar..."
+              data-error="error-motivo"
+            ></textarea>
+            <div id="error-motivo" class="error-msg">
+              <span role="img" aria-label="Error">!</span> Por favor, escribí tu
+              motivo de oración.
+            </div>
+          </div>
+
+          <div class="dialog-actions">
+            <button type="submit" class="btn-primary">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                />
+              </svg>
+              <span>Enviar por WhatsApp</span>
+            </button>
+            <button
+              type="button"
+              class="btn-secondary"
+              command="close"
+              commandfor="dialog-oracion"
+            >
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+
+    <!-- Modal: Áreas, Ministerios y Talleres -->
+    <dialog id="dialog-areas" closedby="any" aria-labelledby="areas-title">
+      <div class="dialog-surface">
+        <div class="dialog-header">
+          <h1 id="areas-title" class="dialog-title">
+            Áreas, Ministerios y Talleres
+          </h1>
+          <button
+            type="button"
+            class="dialog-close"
+            command="close"
+            commandfor="dialog-areas"
+            aria-label="Cerrar ventana"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <p class="dialog-lead">Elegí qué espacio querés conocer:</p>
+
+        <div class="modal-options">
+          <a href="/#areas" class="modal-option" autofocus>
+            <div>
+              <span class="modal-option-title">Áreas y Ministerios</span>
+              <span class="modal-option-desc"
+                >Conocé los grupos, reuniones y espacios de servicio</span
+              >
+            </div>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </a>
+
+          <a href="/#talleres" class="modal-option">
+            <div>
+              <span class="modal-option-title">Talleres Comunitarios</span>
+              <span class="modal-option-desc"
+                >Cursos y oficios abiertos a toda la comunidad</span
+              >
+            </div>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </dialog>
+
+    <script>
+      (() => {
+        const WHATSAPP_NUMBER = "5491139106825";
+
+        // 1. Top-layer exit animation detection and fallback for Firefox & Safari
+        let supportsDisplayTransition;
+        function canTransitionDisplay() {
+          if (supportsDisplayTransition !== undefined)
+            return supportsDisplayTransition;
+          if (
+            !window.CSS?.supports?.("transition-behavior", "allow-discrete") ||
+            !document.body
+          ) {
+            return false;
+          }
+          const probe = document.createElement("div");
+          probe.style.cssText =
+            "transition: display 1s allow-discrete !important; display: block;";
+          document.body.appendChild(probe);
+          getComputedStyle(probe).display;
+          probe.style.display = "none";
+          supportsDisplayTransition =
+            getComputedStyle(probe).display === "block";
+          probe.remove();
+          return supportsDisplayTransition;
+        }
+
+        function supportsTopLayerExit() {
+          return (
+            window.CSS?.supports?.("overlay", "auto") && canTransitionDisplay()
+          );
+        }
+
+        async function closeTopLayer(dialog) {
+          if (!dialog.open) return;
+          if (!supportsTopLayerExit()) {
+            dialog.setAttribute("data-closing", "");
+            const animations = dialog.getAnimations({ subtree: true });
+            if (animations.length > 0) {
+              await Promise.race([
+                Promise.allSettled(animations.map((a) => a.finished)),
+                new Promise((r) => setTimeout(r, 2000)),
+              ]);
+            }
+            if (!dialog.hasAttribute("data-closing")) return;
+            dialog.removeAttribute("data-closing");
+          }
+          dialog.close();
+        }
+
+        const dialogs = [...document.querySelectorAll("dialog")];
+        for (const dialog of dialogs) {
+          dialog.addEventListener("cancel", (event) => {
+            event.preventDefault();
+            closeTopLayer(dialog);
+          });
+
+          dialog.addEventListener("close", () => {
+            dialog.returnValue = "";
+          });
+        }
+
+        // 2. Fallback for Invoker Commands (command / commandfor) and animated close
+        const hasInvokerCommands =
+          "commandForElement" in HTMLButtonElement.prototype;
+        if (!hasInvokerCommands) {
+          for (const button of document.querySelectorAll(
+            '[command="show-modal"][commandfor]',
+          )) {
+            button.addEventListener("click", () => {
+              const target = document.getElementById(
+                button.getAttribute("commandfor"),
+              );
+              if (target && !target.open) target.showModal();
+            });
+          }
+        }
+
+        for (const button of document.querySelectorAll(
+          '[command="close"][commandfor]',
+        )) {
+          button.addEventListener("click", (event) => {
+            if (!hasInvokerCommands || !supportsTopLayerExit()) {
+              event.preventDefault();
+              const target = document.getElementById(
+                button.getAttribute("commandfor"),
+              );
+              if (target) closeTopLayer(target);
+            }
+          });
+        }
+
+        // 3. Fallback for <dialog closedby="any"> light-dismiss
+        if (!("closedBy" in HTMLDialogElement.prototype)) {
+          const isOutside = (event, dialog) => {
+            const rect = dialog.getBoundingClientRect();
+            return (
+              event.clientX < rect.left ||
+              event.clientX > rect.right ||
+              event.clientY < rect.top ||
+              event.clientY > rect.bottom
+            );
+          };
+
+          for (const dialog of document.querySelectorAll(
+            'dialog[closedby="any"]',
+          )) {
+            let pressedOutside = false;
+            dialog.addEventListener("pointerdown", (event) => {
+              pressedOutside = isOutside(event, dialog);
+            });
+            dialog.addEventListener("pointerup", (event) => {
+              if (pressedOutside && isOutside(event, dialog)) {
+                closeTopLayer(dialog);
+              }
+            });
+          }
+        }
+
+        // 4. Accessible after-interaction validation & ARIA synchronization
+        const prayerForm = document.getElementById("form-oracion");
+        const dialogOracion = document.getElementById("dialog-oracion");
+
+        const linkError = (el, shown) => {
+          const errorId = el.dataset.error;
+          if (!errorId) return;
+          const ids = (el.getAttribute("aria-describedby") || "")
+            .split(/\s+/)
+            .filter((id) => id && id !== errorId);
+          if (shown) ids.push(errorId);
+          if (ids.length) el.setAttribute("aria-describedby", ids.join(" "));
+          else el.removeAttribute("aria-describedby");
+        };
+
+        const announcer = document.createElement("div");
+        announcer.setAttribute("aria-live", "polite");
+        announcer.classList.add("visually-hidden");
+        document.body.append(announcer);
+        let announceTimer;
+        let announcedField;
+
+        const spokenText = (node) => {
+          const copy = node.cloneNode(true);
+          copy
+            .querySelectorAll('[aria-hidden="true"]')
+            .forEach((n) => n.remove());
+          copy
+            .querySelectorAll('[role="img"][aria-label]')
+            .forEach((n) => n.replaceWith(`${n.getAttribute("aria-label")}: `));
+          return copy.textContent.replace(/\s+/g, " ").trim();
+        };
+
+        const announceError = (el) => {
+          const error = document.getElementById(el.dataset.error);
+          if (!error) return;
+          const label = el.labels?.[0] ? `${spokenText(el.labels[0])}: ` : "";
+          clearTimeout(announceTimer);
+          announcer.textContent = "";
+          announcedField = el;
+          announceTimer = setTimeout(() => {
+            announcer.textContent = label + spokenText(error);
+          }, 500);
+        };
+
+        if (CSS.supports("selector(:user-invalid)")) {
+          const flagged = new WeakSet();
+          const announced = new WeakSet();
+
+          const syncAria = (el, announce = false) => {
+            if (!el.matches?.("input, select, textarea")) return;
+            const invalid = el.matches(":user-invalid");
+            if (invalid) {
+              if (announce && !announced.has(el)) {
+                announceError(el);
+                announced.add(el);
+              }
+              el.setAttribute("aria-invalid", "true");
+              linkError(el, true);
+              flagged.add(el);
+            } else if (
+              flagged.has(el) ||
+              el.getAttribute("aria-invalid") !== "true"
+            ) {
+              el.setAttribute("aria-invalid", "false");
+              linkError(el, false);
+              flagged.delete(el);
+              announced.delete(el);
+              if (announcedField === el) {
+                clearTimeout(announceTimer);
+                announcer.textContent = "";
+              }
+            }
+          };
+
+          prayerForm
+            .querySelectorAll("input, textarea")
+            .forEach((el) => syncAria(el));
+          prayerForm.addEventListener(
+            "blur",
+            (e) => syncAria(e.target, true),
+            true,
+          );
+          prayerForm.addEventListener("input", (e) => {
+            if (e.target.hasAttribute("aria-invalid")) syncAria(e.target);
+          });
+          prayerForm.addEventListener(
+            "invalid",
+            (e) => {
+              announced.add(e.target);
+              syncAria(e.target);
+            },
+            true,
+          );
+          prayerForm.addEventListener("reset", () => {
+            setTimeout(() => {
+              prayerForm
+                .querySelectorAll("input, textarea")
+                .forEach((el) => syncAria(el));
+            });
+          });
+        } else {
+          const dirtyState = new WeakMap();
+
+          const updateFallbackState = (input, announce = false) => {
+            const isValid = input.validity.valid;
+            input.classList.toggle("user-invalid-fallback", !isValid);
+            input.classList.toggle("user-valid-fallback", isValid);
+            input.setAttribute("aria-invalid", isValid ? "false" : "true");
+            linkError(input, !isValid);
+            if (!isValid && announce) announceError(input);
+          };
+
+          prayerForm.querySelectorAll("input, textarea").forEach((el) => {
+            el.setAttribute("aria-invalid", "false");
+          });
+
+          prayerForm.addEventListener(
+            "blur",
+            (e) => {
+              const input = e.target;
+              if (!input.checkValidity) return;
+              const state = dirtyState.get(input) || {
+                hasInteracted: false,
+                hasBlurred: false,
+              };
+              state.hasBlurred = true;
+              dirtyState.set(input, state);
+              if (state.hasInteracted) updateFallbackState(input, true);
+            },
+            true,
+          );
+
+          prayerForm.addEventListener("input", (e) => {
+            const input = e.target;
+            if (!input.checkValidity) return;
+            const state = dirtyState.get(input) || {
+              hasInteracted: false,
+              hasBlurred: false,
+            };
+            state.hasInteracted = true;
+            dirtyState.set(input, state);
+            if (state.hasBlurred) updateFallbackState(input, false);
+          });
+
+          prayerForm.addEventListener(
+            "invalid",
+            (e) => {
+              dirtyState.set(e.target, {
+                hasInteracted: true,
+                hasBlurred: true,
+              });
+              updateFallbackState(e.target, false);
+            },
+            true,
+          );
+
+          prayerForm.addEventListener("reset", () => {
+            for (const control of prayerForm.elements) {
+              dirtyState.delete(control);
+              control.classList.remove(
+                "user-invalid-fallback",
+                "user-valid-fallback",
+              );
+              if (control.matches("input, textarea"))
+                control.setAttribute("aria-invalid", "false");
+              if (control.dataset?.error) linkError(control, false);
+            }
+          });
+        }
+
+        // Clear custom whitespace validity on input
+        prayerForm.addEventListener("input", (e) => {
+          if (e.target.setCustomValidity) e.target.setCustomValidity("");
+        });
+
+        // 5. Submit prayer request structured via WhatsApp
+        prayerForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+
+          const nombreInput = document.getElementById("oracion-nombre");
+          const celularInput = document.getElementById("oracion-celular");
+          const motivoInput = document.getElementById("oracion-motivo");
+
+          for (const input of [nombreInput, celularInput, motivoInput]) {
+            if (!input.value.trim()) {
+              input.setCustomValidity("Por favor, completá este campo.");
+            } else {
+              input.setCustomValidity("");
+            }
+          }
+
+          if (!prayerForm.reportValidity()) {
+            return;
+          }
+
+          const nombre = nombreInput.value.trim();
+          const celular = celularInput.value.trim();
+          const motivo = motivoInput.value.trim();
+
+          const message = [
+            "*Pedido de Oración - Punto de Encuentro*",
+            "",
+            `*Nombre:* ${nombre}`,
+            `*Celular:* ${celular}`,
+            "*Motivo de oración:*",
+            motivo,
+          ].join("\n");
+
+          const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+          const link = document.createElement("a");
+          link.href = whatsappUrl;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.click();
+
+          prayerForm.reset();
+          closeTopLayer(dialogOracion);
+        });
+      })();
+    </script>
+  </body>
+</html>
