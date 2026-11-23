@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#02151f" />
     <title>Bienvenido a casa - Punto de Encuentro</title>
 
@@ -82,6 +82,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        min-height: 100vh;
         min-height: 100dvh;
         overflow-x: hidden;
         position: relative;
@@ -103,10 +104,16 @@
         z-index: 1;
         width: 100%;
         max-width: 500px;
-        padding: 28px 18px 34px;
+        height: 100vh;
+        height: 100dvh;
+        max-height: 860px;
+        padding: calc(clamp(8px, 2dvh, 22px) + env(safe-area-inset-top)) 16px
+          calc(clamp(10px, 2.4dvh, 26px) + env(safe-area-inset-bottom));
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-evenly;
+        gap: clamp(8px, 1.6dvh, 18px);
         text-align: center;
       }
 
@@ -114,20 +121,21 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 22px;
+        margin-bottom: 0;
+        flex-shrink: 1;
       }
 
       .logo {
-        width: clamp(140px, 36vw, 172px);
+        width: clamp(86px, min(35vw, 18dvh), 168px);
         height: auto;
         display: block;
-        margin-bottom: 10px;
+        margin-bottom: clamp(4px, 0.9dvh, 10px);
         filter: drop-shadow(0 6px 18px rgba(0, 224, 248, 0.22));
       }
 
       .brand-name {
-        margin: 0 0 12px;
-        font-size: clamp(1.05rem, 4vw, 1.32rem);
+        margin: 0 0 clamp(4px, 1dvh, 10px);
+        font-size: clamp(0.88rem, min(3.8vw, 2.1dvh), 1.3rem);
         font-weight: 800;
         line-height: 1.04;
         letter-spacing: 0.04em;
@@ -137,7 +145,7 @@
 
       .hero-title {
         margin: 0;
-        font-size: clamp(2.5rem, 11.5vw, 3.55rem);
+        font-size: clamp(1.95rem, min(11.2vw, 5.8dvh), 3.5rem);
         font-weight: 900;
         font-style: italic;
         line-height: 0.96;
@@ -151,7 +159,7 @@
         width: 100%;
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 13px;
+        gap: clamp(8px, 1.3dvh, 13px);
       }
 
       .action-card {
@@ -165,9 +173,9 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        min-height: 104px;
-        padding: 15px 11px;
-        gap: 5px;
+        min-height: clamp(66px, 10.8dvh, 102px);
+        padding: clamp(8px, 1.3dvh, 14px) 10px;
+        gap: clamp(2px, 0.5dvh, 5px);
         border-radius: 20px;
         border: 1.5px solid var(--cyan-border);
         background: linear-gradient(
@@ -230,29 +238,35 @@
       }
 
       .card-title {
-        font-size: clamp(0.94rem, 3.7vw, 1.15rem);
+        font-size: clamp(0.86rem, min(3.7vw, 2.15dvh), 1.14rem);
         font-weight: 800;
         line-height: 1.15;
         color: #ffffff;
       }
 
       .card-subtitle {
-        font-size: clamp(0.72rem, 2.7vw, 0.85rem);
+        font-size: clamp(0.68rem, min(2.7vw, 1.55dvh), 0.85rem);
         font-weight: 400;
         line-height: 1.25;
         color: var(--text-soft);
       }
 
       /* Bottom full-website pill */
+      .page-footer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
       .web-pill {
-        margin-top: 22px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 10px;
         width: 100%;
         max-width: 380px;
-        padding: 13px 20px;
+        padding: clamp(9px, 1.4dvh, 13px) 18px;
         border-radius: 999px;
         border: 1.5px solid rgba(56, 214, 236, 0.82);
         background: rgba(2, 26, 38, 0.72);
@@ -260,7 +274,7 @@
         -webkit-backdrop-filter: blur(8px);
         color: #ffffff;
         text-decoration: none;
-        font-size: clamp(0.84rem, 3.2vw, 0.96rem);
+        font-size: clamp(0.8rem, min(3.2vw, 1.85dvh), 0.96rem);
         font-weight: 500;
         box-shadow:
           inset 0 0 14px rgba(0, 228, 255, 0.12),
@@ -270,6 +284,14 @@
           box-shadow 0.2s ease,
           background 0.2s ease,
           transform 0.2s ease;
+      }
+
+      @media (max-height: 500px) {
+        .container {
+          height: auto;
+          max-height: none;
+          justify-content: flex-start;
+        }
       }
 
       .web-pill:hover {
@@ -730,7 +752,7 @@
         <!-- 1. Primera vez -->
         <a href="/#nosotros" class="action-card">
           <span class="card-title">¿Es tu<br />primera vez?</span>
-          <span class="card-subtitle">Queremos conocerte</span>
+          <span class="card-subtitle">Conocenos</span>
         </a>
 
         <!-- 2. Quiero ofrendar -->
@@ -779,22 +801,24 @@
         </a>
       </nav>
 
-      <a href="/" class="web-pill">
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          aria-hidden="true"
-        >
-          <circle cx="12" cy="12" r="9.5" />
-          <ellipse cx="12" cy="12" rx="4.2" ry="9.5" />
-          <path d="M2.8 12h18.4" />
-          <path d="M4.6 7.4h14.8" />
-          <path d="M4.6 16.6h14.8" />
-        </svg>
-        <span>Visitar nuestra página web completa</span>
-      </a>
+      <footer class="page-footer">
+        <a href="/" class="web-pill">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="9.5" />
+            <ellipse cx="12" cy="12" rx="4.2" ry="9.5" />
+            <path d="M2.8 12h18.4" />
+            <path d="M4.6 7.4h14.8" />
+            <path d="M4.6 16.6h14.8" />
+          </svg>
+          <span>Visitar nuestra página web completa</span>
+        </a>
+      </footer>
     </main>
 
     <!-- Modal: Pedir oración -->
