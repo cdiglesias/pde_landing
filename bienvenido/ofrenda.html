@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#02151f" />
+    <title>Ofrendas y donaciones - Punto de Encuentro</title>
+
+    <!-- Open Graph / WhatsApp -->
+    <meta property="og:title" content="Ofrendas y donaciones - Punto de Encuentro" />
+    <meta
+      property="og:description"
+      content="Datos para ofrendas y donaciones a Asociación Civil Punto de Encuentro Solid (Mercado Pago - CVU y Alias)."
+    />
+    <meta property="og:image" content="https://pde.com.ar/icon_wide.jpg" />
+    <meta property="og:image" content="https://pde.com.ar/icon.jpg" />
+    <meta property="og:url" content="https://pde.com.ar/bienvenido/ofrenda.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ofrendas y donaciones - Punto de Encuentro" />
+    <meta
+      name="twitter:description"
+      content="Datos para ofrendas y donaciones a Asociación Civil Punto de Encuentro Solid (Mercado Pago - CVU y Alias)."
+    />
+    <meta name="twitter:image" content="https://pde.com.ar/icon_wide.jpg" />
+
+    <link rel="icon" type="image/png" href="/icon_max.png" />
+    <link rel="apple-touch-icon" href="/icon_max.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg-deep: #02151f;
+        --cyan-bright: #3be8ff;
+        --cyan-border: rgba(56, 214, 236, 0.65);
+        --text-main: #ffffff;
+        --text-soft: rgba(224, 245, 250, 0.88);
+        --font-main: 'Montserrat', system-ui, -apple-system, sans-serif;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+      }
+
+      body {
+        font-family: var(--font-main);
+        color: var(--text-main);
+        background-color: var(--bg-deep);
+        background-image:
+          radial-gradient(
+            circle at 50% 28%,
+            rgba(12, 102, 124, 0.48) 0%,
+            rgba(4, 38, 52, 0.25) 42%,
+            transparent 72%
+          ),
+          linear-gradient(180deg, #031e2c 0%, #02151f 55%, #011018 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow-x: hidden;
+        position: relative;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .bg-waves {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .container {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 500px;
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: calc(clamp(12px, 2.2dvh, 24px) + env(safe-area-inset-top)) 16px
+          calc(clamp(16px, 2.8dvh, 28px) + env(safe-area-inset-bottom));
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: clamp(12px, 2dvh, 20px);
+        text-align: center;
+      }
+
+      .top-bar {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 14px 8px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(56, 214, 236, 0.5);
+        background: rgba(2, 26, 38, 0.65);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 0.86rem;
+        font-weight: 600;
+        transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+      }
+
+      .back-link:hover {
+        border-color: #6df5ff;
+        background: rgba(7, 55, 74, 0.85);
+      }
+
+      .back-link svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .logo {
+        width: clamp(78px, min(22vw, 12dvh), 98px);
+        height: auto;
+        display: block;
+        margin-bottom: 6px;
+        filter: drop-shadow(0 6px 18px rgba(0, 224, 248, 0.22));
+      }
+
+      .brand-name {
+        margin: 0 0 6px;
+        font-size: clamp(0.8rem, 3.2vw, 0.96rem);
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--text-soft);
+      }
+
+      .hero-title {
+        margin: 0;
+        font-size: clamp(1.85rem, 8.2vw, 2.65rem);
+        font-weight: 900;
+        font-style: italic;
+        line-height: 0.98;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+        text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+      }
+
+      .details-card {
+        width: 100%;
+        border-radius: 22px;
+        border: 1.5px solid var(--cyan-border);
+        background: linear-gradient(160deg, rgba(12, 108, 128, 0.4) 0%, rgba(3, 35, 48, 0.8) 100%);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow:
+          inset 0 0 24px rgba(0, 228, 255, 0.14),
+          0 10px 28px rgba(0, 0, 0, 0.38);
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        text-align: left;
+      }
+
+      .card-kicker {
+        margin: 0;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #6df5ff;
+      }
+
+      .detail-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 11px 13px;
+        border-radius: 14px;
+        border: 1px solid rgba(56, 214, 236, 0.32);
+        background: rgba(2, 20, 29, 0.65);
+      }
+
+      .detail-text {
+        min-width: 0;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .detail-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: rgba(162, 236, 248, 0.78);
+      }
+
+      .detail-value {
+        font-size: clamp(0.86rem, 3.3vw, 0.98rem);
+        font-weight: 700;
+        color: #ffffff;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+      }
+
+      .detail-value.mono {
+        font-variant-numeric: tabular-nums;
+        letter-spacing: 0.015em;
+      }
+
+      /* Accessible copy button + status tip (opacity-toggled, never display/visibility hidden) */
+      .copy {
+        position: relative;
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .copy-button {
+        appearance: none;
+        min-inline-size: 40px;
+        min-block-size: 40px;
+        padding: 8px;
+        border-radius: 12px;
+        border: 1px solid rgba(72, 224, 244, 0.55);
+        background: rgba(11, 88, 108, 0.45);
+        color: #7ef6ff;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          border-color 0.18s ease,
+          background-color 0.18s ease,
+          color 0.18s ease,
+          transform 0.18s ease;
+      }
+
+      .copy-button:hover {
+        border-color: #7ef6ff;
+        background: rgba(16, 124, 150, 0.65);
+      }
+
+      .copy-button[data-copied] {
+        border-color: #36d99a;
+        background: rgba(20, 118, 84, 0.55);
+        color: #7affca;
+      }
+
+      .copy-button[data-failed] {
+        border-color: #ff6b7a;
+        background: rgba(110, 20, 34, 0.55);
+        color: #ffb3bc;
+      }
+
+      .copy-button svg {
+        width: 20px;
+        height: 20px;
+        display: block;
+      }
+
+      .copy-button .icon-check {
+        display: none;
+      }
+
+      .copy-button[data-copied] .icon-copy {
+        display: none;
+      }
+
+      .copy-button[data-copied] .icon-check {
+        display: block;
+      }
+
+      .tip {
+        position: absolute;
+        inset-block-end: calc(100% + 7px);
+        inset-inline-end: 0;
+        padding: 4px 9px;
+        border-radius: 8px;
+        background: #042b3b;
+        border: 1px solid rgba(72, 224, 244, 0.65);
+        color: #ffffff;
+        font-size: 0.72rem;
+        font-weight: 700;
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(4px);
+        transition: opacity 0.18s ease, transform 0.18s ease;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+        z-index: 5;
+      }
+
+      .copy-button[data-copied] + .tip,
+      .copy-button[data-failed] + .tip {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .copy-button[data-copied] + .tip {
+        border-color: #36d99a;
+      }
+
+      .copy-button[data-failed] + .tip {
+        border-color: #ff6b7a;
+      }
+
+      /* Mercado Pago primary CTA & footer */
+      .cta-block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .mp-cta {
+        appearance: none;
+        width: 100%;
+        padding: 14px 20px;
+        border: none;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #42f0ff 0%, #10b6cc 100%);
+        color: #021a24;
+        font-family: inherit;
+        font-size: clamp(0.92rem, 3.6vw, 1.02rem);
+        font-weight: 800;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        box-shadow: 0 8px 24px rgba(24, 210, 234, 0.38);
+        transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .mp-cta:hover {
+        background: linear-gradient(135deg, #6ef4ff 0%, #24c8de 100%);
+        box-shadow: 0 10px 28px rgba(24, 210, 234, 0.48);
+      }
+
+      .mp-cta svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+      }
+
+      .mp-helper {
+        margin: 0;
+        font-size: 0.77rem;
+        line-height: 1.4;
+        color: var(--text-soft);
+        max-width: 390px;
+      }
+
+      .mp-status {
+        margin: 0;
+        min-height: 1.2em;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #7affca;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+
+      .mp-status.is-visible {
+        opacity: 1;
+      }
+
+      .page-footer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .secondary-link {
+        color: rgba(190, 238, 248, 0.82);
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        transition: color 0.18s ease;
+      }
+
+      .secondary-link:hover {
+        color: #6df5ff;
+      }
+
+      .back-link:focus-visible,
+      .copy-button:focus-visible,
+      .mp-cta:focus-visible,
+      .secondary-link:focus-visible {
+        outline: 2px solid #63f4ff;
+        outline-offset: 3px;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .back-link:hover,
+        .mp-cta:hover {
+          transform: translateY(-1px);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .back-link,
+        .copy-button,
+        .tip,
+        .mp-cta,
+        .mp-status,
+        .secondary-link {
+          transition: opacity 0.15s ease;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg class="bg-waves" viewBox="0 0 800 1200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="wave-top" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#3df7ff" stop-opacity="0.95" />
+          <stop offset="45%" stop-color="#00b4d8" stop-opacity="0.45" />
+          <stop offset="100%" stop-color="#02151f" stop-opacity="0" />
+        </linearGradient>
+        <linearGradient id="wave-bottom" x1="100%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" stop-color="#3df7ff" stop-opacity="0.95" />
+          <stop offset="45%" stop-color="#00a8c8" stop-opacity="0.42" />
+          <stop offset="100%" stop-color="#02151f" stop-opacity="0" />
+        </linearGradient>
+        <radialGradient id="glow-tr" cx="92%" cy="10%" r="48%">
+          <stop offset="0%" stop-color="#0bbcd6" stop-opacity="0.34" />
+          <stop offset="100%" stop-color="#02151f" stop-opacity="0" />
+        </radialGradient>
+        <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="22" />
+        </filter>
+      </defs>
+
+      <rect width="800" height="1200" fill="url(#glow-tr)" />
+      <path d="M -60 -40 L 340 -40 C 200 120, 75 230, -60 360 Z" fill="url(#wave-top)" filter="url(#soft-glow)" />
+      <path
+        d="M -20 280 C 120 190, 250 110, 390 -30"
+        fill="none"
+        stroke="#4ff6ff"
+        stroke-width="3"
+        stroke-opacity="0.45"
+        filter="url(#soft-glow)"
+      />
+      <path
+        d="M 850 380 C 560 470, 520 710, 860 880"
+        fill="none"
+        stroke="#16e0fa"
+        stroke-width="32"
+        stroke-opacity="0.22"
+        filter="url(#soft-glow)"
+      />
+      <path
+        d="M 860 1240 L 360 1240 C 520 1070, 680 950, 860 820 Z"
+        fill="url(#wave-bottom)"
+        filter="url(#soft-glow)"
+      />
+    </svg>
+
+    <main class="container">
+      <div class="top-bar">
+        <a href="/bienvenido/" class="back-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+          <span>Volver</span>
+        </a>
+      </div>
+
+      <header class="hero">
+        <img
+          src="/bienvenido/logo-dark.png"
+          alt="Logo Punto de Encuentro"
+          width="98"
+          height="98"
+          fetchpriority="high"
+          class="logo"
+        />
+        <p class="brand-name">Punto de Encuentro</p>
+        <h1 class="hero-title">Ofrendas y<br />donaciones</h1>
+      </header>
+
+      <section class="details-card" aria-labelledby="datos-title">
+        <h2 id="datos-title" class="card-kicker">Datos para ofrendas / donaciones</h2>
+
+        <div class="detail-row">
+          <div class="detail-text">
+            <span class="detail-label">Titular</span>
+            <span id="val-titular" class="detail-value">ASOCIACIÓN CIVIL PUNTO DE ENCUENTRO SOLID</span>
+          </div>
+          <span class="copy">
+            <button
+              type="button"
+              class="copy-button"
+              command="--copy"
+              commandfor="val-titular"
+              aria-label="Copiar titular"
+            >
+              <svg class="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+              </svg>
+              <svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+            </button>
+            <span class="tip" role="status"></span>
+          </span>
+        </div>
+
+        <div class="detail-row">
+          <div class="detail-text">
+            <span class="detail-label">Cuenta</span>
+            <span class="detail-value">Mercado Pago</span>
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <div class="detail-text">
+            <span class="detail-label">CVU</span>
+            <span id="val-cvu" class="detail-value mono">0000003100022494464487</span>
+          </div>
+          <span class="copy">
+            <button
+              type="button"
+              class="copy-button"
+              command="--copy"
+              commandfor="val-cvu"
+              aria-label="Copiar CVU"
+            >
+              <svg class="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+              </svg>
+              <svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+            </button>
+            <span class="tip" role="status"></span>
+          </span>
+        </div>
+
+        <div class="detail-row">
+          <div class="detail-text">
+            <span class="detail-label">Alias</span>
+            <span id="val-alias" class="detail-value mono">punto.deencuentro.mp</span>
+          </div>
+          <span class="copy">
+            <button
+              type="button"
+              class="copy-button"
+              command="--copy"
+              commandfor="val-alias"
+              aria-label="Copiar alias"
+            >
+              <svg class="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+              </svg>
+              <svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+            </button>
+            <span class="tip" role="status"></span>
+          </span>
+        </div>
+      </section>
+
+      <div class="cta-block">
+        <button type="button" id="btn-open-mp" class="mp-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" x2="21" y1="14" y2="3" />
+          </svg>
+          <span>Copiar CVU y abrir Mercado Pago</span>
+        </button>
+        <p class="mp-helper">
+          Copiamos el CVU automáticamente para que solo lo pegues en &ldquo;Transferir&rdquo; dentro de Mercado Pago.
+        </p>
+        <p id="mp-status" class="mp-status" role="status"></p>
+      </div>
+
+      <footer class="page-footer">
+        <a href="/#contribuir" class="secondary-link">Ver otras formas de contribuir (alimentos y ropa)</a>
+      </footer>
+    </main>
+
+    <script>
+      (() => {
+        const CVU_VALUE = '0000003100022494464487';
+        const MP_URL = 'https://www.mercadopago.com.ar/home';
+
+        const timers = new WeakMap();
+        let lastMessage = '';
+
+        function legacyCopy(text) {
+          const previousFocus = document.activeElement;
+          const field = Object.assign(document.createElement('textarea'), { value: text });
+          field.setAttribute('readonly', '');
+          field.style.cssText = 'position:fixed;inset-block-start:0;opacity:0';
+          document.body.append(field);
+          field.select();
+          try {
+            return document.execCommand('copy');
+          } finally {
+            field.remove();
+            previousFocus?.focus({ preventScroll: true });
+          }
+        }
+
+        async function writeTextToClipboard(text) {
+          try {
+            await navigator.clipboard.writeText(text);
+            return true;
+          } catch {
+            return legacyCopy(text);
+          }
+        }
+
+        function report(button, ok) {
+          const tip = button.nextElementSibling;
+          clearTimeout(timers.get(button));
+          button.removeAttribute('data-copied');
+          button.removeAttribute('data-failed');
+
+          let message = ok ? 'Copiado' : 'No se pudo copiar';
+          if (message === lastMessage) message += '\u00A0';
+          lastMessage = message;
+
+          tip.textContent = '';
+          void button.offsetWidth;
+          button.setAttribute(ok ? 'data-copied' : 'data-failed', '');
+          requestAnimationFrame(() => {
+            tip.textContent = message;
+          });
+
+          timers.set(
+            button,
+            setTimeout(() => {
+              button.removeAttribute('data-copied');
+              button.removeAttribute('data-failed');
+              tip.textContent = '';
+            }, 2000)
+          );
+        }
+
+        async function copy(button, target) {
+          const text = target.matches('input, textarea') ? target.value : target.innerText.trim();
+          if (!text) return;
+          const ok = await writeTextToClipboard(text);
+          report(button, ok);
+        }
+
+        // Register only one path so a click never copies twice
+        if ('CommandEvent' in window) {
+          document.addEventListener(
+            'command',
+            (event) => {
+              if (event.command.startsWith('--copy')) {
+                copy(event.source, event.target);
+              }
+            },
+            true
+          );
+        } else {
+          document.addEventListener('click', (event) => {
+            if (event.defaultPrevented) return;
+            const button = event.target.closest('button[command^="--copy"]');
+            if (!button) return;
+            const target = document.getElementById(button.getAttribute('commandfor'));
+            if (target) copy(button, target);
+          });
+        }
+
+        // Primary CTA: copy CVU & open Mercado Pago in a new tab/app
+        const openMpBtn = document.getElementById('btn-open-mp');
+        const mpStatus = document.getElementById('mp-status');
+        let mpStatusTimer;
+
+        openMpBtn.addEventListener('click', async () => {
+          const copied = await writeTextToClipboard(CVU_VALUE);
+          clearTimeout(mpStatusTimer);
+          mpStatus.classList.remove('is-visible');
+          mpStatus.textContent = '';
+
+          let msg = copied
+            ? 'CVU copiado. Abriendo Mercado Pago…'
+            : 'Abriendo Mercado Pago… (podés copiar el CVU arriba)';
+          if (msg === lastMessage) msg += '\u00A0';
+          lastMessage = msg;
+
+          requestAnimationFrame(() => {
+            mpStatus.textContent = msg;
+            mpStatus.classList.add('is-visible');
+          });
+
+          mpStatusTimer = setTimeout(() => {
+            mpStatus.classList.remove('is-visible');
+            mpStatus.textContent = '';
+          }, 3500);
+
+          const link = document.createElement('a');
+          link.href = MP_URL;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.click();
+        });
+      })();
+    </script>
+  </body>
+</html>

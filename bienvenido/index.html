@@ -756,7 +756,7 @@
         </a>
 
         <!-- 2. Quiero ofrendar -->
-        <a href="/#contribuir" class="action-card">
+        <a href="/bienvenido/ofrenda.html" class="action-card">
           <span class="card-title">Quiero<br />ofrendar</span>
           <span class="card-subtitle">Ofrendas y donaciones</span>
         </a>
@@ -868,24 +868,6 @@
             <div id="error-nombre" class="error-msg">
               <span role="img" aria-label="Error">!</span> Por favor, ingresá tu
               nombre.
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="oracion-celular">Celular</label>
-            <input
-              id="oracion-celular"
-              name="celular"
-              type="tel"
-              required
-              autocomplete="tel"
-              inputmode="tel"
-              placeholder="Ej: 11 1234-5678"
-              data-error="error-celular"
-            />
-            <div id="error-celular" class="error-msg">
-              <span role="img" aria-label="Error">!</span> Por favor, ingresá tu
-              número de celular.
             </div>
           </div>
 
@@ -1307,10 +1289,9 @@
           event.preventDefault();
 
           const nombreInput = document.getElementById("oracion-nombre");
-          const celularInput = document.getElementById("oracion-celular");
           const motivoInput = document.getElementById("oracion-motivo");
 
-          for (const input of [nombreInput, celularInput, motivoInput]) {
+          for (const input of [nombreInput, motivoInput]) {
             if (!input.value.trim()) {
               input.setCustomValidity("Por favor, completá este campo.");
             } else {
@@ -1323,14 +1304,12 @@
           }
 
           const nombre = nombreInput.value.trim();
-          const celular = celularInput.value.trim();
           const motivo = motivoInput.value.trim();
 
           const message = [
             "*Pedido de Oración - Punto de Encuentro*",
             "",
             `*Nombre:* ${nombre}`,
-            `*Celular:* ${celular}`,
             "*Motivo de oración:*",
             motivo,
           ].join("\n");
